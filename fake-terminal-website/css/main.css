@@ -13,8 +13,8 @@ body {
     background-color: black;
 }
 #container {
-    padding: .1em 1.5em 1em 1em;
-    margin-left: 50px;
+    padding: .1em 1.5em 1em 0;
+    margin-left: 35px;
     margin-right: 135px;
 }
 #cmdline {
@@ -76,20 +76,20 @@ body {
 
 #sidenavBtn {
     position: absolute !important;
-    padding: 2px !important; 
-    top: 0 !important;
+    padding: 2px !important;
+    top: -14px !important;
     right: 7px !important;
     font-size: 35px !important;
 }
 
 #sidenav {
     height: 100%;
-    width: 50px;
+    width: 35px;
     position: fixed;
     z-index: 9;
     top: 0;
     left: 0;
-    background-color: #e09f14;
+    background-color: 'black';/* #e09f14; */
     opacity: 0.8;
     overflow-x: hidden;
     transition: 0.3s;

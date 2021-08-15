@@ -234,14 +234,19 @@ var main = (function () {
         if (this.sidenavOpen) {
             this.profilePic.style.opacity = 0;
             this.sidenavElements.forEach(Terminal.makeElementDisappear);
-            this.sidenav.style.width = "50px";
+            this.sidenav.style.width = "35px";
             document.getElementById("sidenavBtn").innerHTML = "&#9776;";
+						this.sidenav.style.backgroundColor='black';
+						document.getElementById("container").style.filter='blur(0)';
             this.sidenavOpen = false;
         } else {
             this.sidenav.style.width = "300px";
             this.sidenavElements.forEach(Terminal.makeElementAppear);
             document.getElementById("sidenavBtn").innerHTML = "&times;";
             this.profilePic.style.opacity = 1;
+
+						this.sidenav.style.backgroundColor='#f7d07e';
+						document.getElementById("container").style.filter='blur(5px)';
             this.sidenavOpen = true;
         }
         document.getElementById("sidenavBtn").blur();

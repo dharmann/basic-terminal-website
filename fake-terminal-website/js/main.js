@@ -92,15 +92,15 @@ var main = (function () {
         event.preventDefault();
         event.stopPropagation();
     };
-    
+
     var scrollToBottom = function () {
         window.scrollTo(0, document.body.scrollHeight);
     };
-    
+
     var isURL = function (str) {
         return (str.startsWith("http") || str.startsWith("www")) && str.indexOf(" ") === -1 && str.indexOf("\n") === -1;
     };
-    
+
     /**
      * Model
      */
@@ -352,6 +352,9 @@ var main = (function () {
         if (cmdComponents.length <= 1) {
             result = configs.getInstance().usage + ": " + cmds.CAT.value + " <" + configs.getInstance().file + ">";
         } else if (!cmdComponents[1] || (!cmdComponents[1] === configs.getInstance().welcome_file_name || !files.getInstance().hasOwnProperty(cmdComponents[1]))) {
+					if(cmdComponents[1] === configs.getInstance().welcome_file_name)
+						result = cmdComponents[1] === configs.getInstance().welcome_file_name ? configs.getInstance().welcome : files.getInstance()[cmdComponents[1]];
+					else
             result = configs.getInstance().file_not_found.replace(configs.getInstance().value_token, cmdComponents[1]);
         } else {
             result = cmdComponents[1] === configs.getInstance().welcome_file_name ? configs.getInstance().welcome : files.getInstance()[cmdComponents[1]];

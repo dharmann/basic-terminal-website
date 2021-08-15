@@ -414,6 +414,7 @@ var main = (function () {
             this.type(configs.getInstance().welcome + (isUsingIE ? "\n" + configs.getInstance().internet_explorer_warning : ""), function () {
                 this.unlock();
             }.bind(this));
+						this.clear();
         }
     };
 
@@ -448,7 +449,7 @@ var main = (function () {
         var i = 0;
         var output = this.output;
         var timer = this.timer;
-        var skipped = false;
+        var skipped = true;
         var skip = function () {
             skipped = true;
         }.bind(this);
